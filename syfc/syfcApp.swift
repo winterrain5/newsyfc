@@ -256,6 +256,7 @@ extension AppDelegate : UNUserNotificationCenterDelegate {
 struct dfsData: Codable, Identifiable {
     var id: Int? { detail_order }
     var detail_order: Int?
+    var detail_id: Int?
     var wave: Int?
     var check_in: String?
     var aircraft: aircraftClass?
@@ -268,7 +269,7 @@ struct dfsData: Codable, Identifiable {
     var course: courseClass?
     var fxo: fxoClass?
     var remarks: String?
-    var acknowledgement: String?
+    var acknowledgement: Bool?
     var dfs: Int?
 }
 

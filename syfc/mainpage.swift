@@ -347,6 +347,7 @@ struct mainpage: View {
                 
                 do {
                     let loaddfslist: [dfsData] = try JSONDecoder().decode([dfsData].self, from: data)
+                    print("dfsapprovallist: \(loaddfslist)")
                     dfsapprovallist = loaddfslist
                     
                 } catch {

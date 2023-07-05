@@ -13,16 +13,15 @@ struct dfspage: View {
     @Binding var currentuserid: Int
     @Binding var dfslist: [dfsData]
     
-    @State var currentdfsid: Int = 16
-    
     @State var calendarrefresh: Bool = false
     @State var notificationrefresh: Bool = false
     @State var reselectdate: Bool = false
     
     
     var body: some View {
+        
         VStack{
-            dfsnavigationbar(screenstatus: $screenstatus, currenttoken: $currenttoken, currentuserid: $currentuserid, currentdfsid: $currentdfsid, titlename: "DFS Approval Page")
+            dfsnavigationbar(screenstatus: $screenstatus, currenttoken: $currenttoken, currentuserid: $currentuserid, currentdfsid: dfslist.first?.dfs ?? 0, titlename: "DFS Approval Page")
             
             ScrollView(.horizontal){
                 ScrollView(.vertical) {

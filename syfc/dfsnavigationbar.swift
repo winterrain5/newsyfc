@@ -7,21 +7,24 @@
 
 import Foundation
 import SwiftUI
-
+import AlertToast
 struct dfsnavigationbar: View {
     @Binding var screenstatus: String
     @Binding var currenttoken: String
     @Binding var currentuserid: Int
-    @Binding var currentdfsid: Int
+    
+    var currentdfsid: Int
     
     @State var logoutbutton: Bool = false
     @State var firstpopup: Bool = false
-    @State var secondpopup: Bool = false
+    @State var approvedSuccess: Bool = false
+    @State var approvedFailed: Bool = false
     @State var rejectpopup: Bool = false
     @State var rejectConfirmPopup: Bool = false
     
     var titlename:String = ""
     var selecteddatestring: String = ""
+    
     
     var body: some View {
         VStack{
@@ -61,13 +64,6 @@ struct dfsnavigationbar: View {
                 .bold()
                 .foregroundColor(.white)
                 .padding()
-                .alert(isPresented: $secondpopup) { () -> Alert in
-                    Alert(
-                        title: Text("Approve DFS"),
-                        message: Text("DFS has been approved."),
-                        dismissButton: .default(Text("Okay"), action: {
-                        }))
-                }
                 .alert(isPresented: $rejectConfirmPopup) { () -> Alert in
                     Alert(
                         title: Text("Reject DFS"),
@@ -125,7 +121,6 @@ struct dfsnavigationbar: View {
                         primaryButton: .default(Text("Yes"),
                                                 action: {
                                                     approveDFS(dfsid: currentdfsid)
-                                                    secondpopup = true
                                                     firstpopup = false
                                                 }),
                         secondaryButton: .default(Text("No"),action: {
@@ -138,12 +133,22 @@ struct dfsnavigationbar: View {
             }
             .background(Rectangle().foregroundColor(.orangecolour))
             .frame(maxWidth: .infinity)
+        }.toast(isPresenting: $approvedSuccess) {
+            AlertToast(displayMode: .hud, type: .complete(.green),title: "DFS has been approved")
+        }.toast(isPresenting: $approvedFailed) {
+            AlertToast(displayMode: .hud, type: .error(.red),title: "DFS approve failed")
         }
     }
     
     func approveDFS(dfsid: Int) {
-//        let jsonString = "{\"approved\": true}"
-        //let jsonString = "{ \"approved\" : true, \"instructor_id\" : \(currentuserid)}"
+        
+        if dfsid == 0 {
+            approvedFailed = true
+            return
+        }
+
+        let params:[String:Any] = ["approved":true,"instructor":currentuserid]
+        let body = try? JSONSerialization.data(withJSONObject: params, options: .fragmentsAllowed)
         
         let url = URL(string: "https://optimus.syfc.com.sg/application/mobile-approve/\(dfsid)/")
         
@@ -151,25 +156,19 @@ struct dfsnavigationbar: View {
         request.httpMethod = "POST"
         request.setValue("application/json", forHTTPHeaderField: "Content-Type")
         request.setValue("Token \(currenttoken)", forHTTPHeaderField: "Authorization")
+        request.httpBody = body
         let config = URLSessionConfiguration.default
         config.requestCachePolicy = .reloadIgnoringLocalCacheData
         config.urlCache = nil
         
         let task = URLSession.init(configuration: config).dataTask(with: request) { data, _, error in
-            guard let data = data, error == nil else {
+            guard let _ = data, error == nil else {
                 print("something went wrong")
                 print(error!)
+                approvedFailed = true
                 return
             }
-            do {
-                try JSONSerialization.jsonObject(with: data, options: .allowFragments)
-                
-                
-            }
-            catch {
-                print("ERROR: \(error)")
-                print(error.localizedDescription)
-            }
+            approvedSuccess = true
         }
         task.resume()
         

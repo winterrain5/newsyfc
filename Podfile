@@ -15,4 +15,5 @@ pod 'ActivityIndicatorView'
 	pod 'Promises'
 pod 'FSCalendar'
 pod 'HandyJSON',git: 'https://github.com/alibaba/handyjson'
+pod 'AlertToast'
 end

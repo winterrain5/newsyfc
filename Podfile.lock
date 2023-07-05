@@ -597,6 +597,7 @@ PODS:
     - abseil/base/config
     - abseil/meta/type_traits
   - ActivityIndicatorView (1.1.0)
+  - AlertToast (1.3.9)
   - BoringSSL-GRPC (0.0.24):
     - BoringSSL-GRPC/Implementation (= 0.0.24)
     - BoringSSL-GRPC/Interface (= 0.0.24)
@@ -742,6 +743,7 @@ PODS:
     - Libuv-gRPC (= 0.0.10)
   - gRPC-Core/Interface (1.44.0)
   - GTMSessionFetcher/Core (3.1.0)
+  - HandyJSON (5.0.4-beta)
   - leveldb-library (1.22.1)
   - Libuv-gRPC (0.0.10):
     - Libuv-gRPC/Implementation (= 0.0.10)
@@ -759,16 +761,19 @@ PODS:
 
 DEPENDENCIES:
   - ActivityIndicatorView
+  - AlertToast
   - FirebaseAnalytics
   - FirebaseAuth
   - FirebaseFirestore
   - FSCalendar
+  - HandyJSON (from `https://github.com/alibaba/handyjson`)
   - Promises
 
 SPEC REPOS:
   trunk:
     - abseil
     - ActivityIndicatorView
+    - AlertToast
     - BoringSSL-GRPC
     - FirebaseAnalytics
     - FirebaseAuth
@@ -788,9 +793,19 @@ SPEC REPOS:
     - Promises
     - PromisesObjC
 
+EXTERNAL SOURCES:
+  HandyJSON:
+    :git: https://github.com/alibaba/handyjson
+
+CHECKOUT OPTIONS:
+  HandyJSON:
+    :commit: f0b15db3bc0c51e935ea2385d6e33d412f04fffe
+    :git: https://github.com/alibaba/handyjson
+
 SPEC CHECKSUMS:
   abseil: ebe5b5529fb05d93a8bdb7951607be08b7fa71bc
   ActivityIndicatorView: 2a73f96feeb64c8583a0a9dfeeee27ddb8f71b4d
+  AlertToast: e8db15da727beff75500bcf33a78cd617f408fa1
   BoringSSL-GRPC: 3175b25143e648463a56daeaaa499c6cb86dad33
   FirebaseAnalytics: 9f382605c5ee412b039212f054bf7a403d9850c1
   FirebaseAuth: 743e5cd568af59d6d99a91ea9300843672515cf7
@@ -804,12 +819,13 @@ SPEC CHECKSUMS:
   "gRPC-C++": 9675f953ace2b3de7c506039d77be1f2e77a8db2
   gRPC-Core: 943e491cb0d45598b0b0eb9e910c88080369290b
   GTMSessionFetcher: c9e714f7eec91a55641e2bab9f45fd83a219b882
+  HandyJSON: a9c67202df97805a0ba4a00e30b50e9a30ac28f3
   leveldb-library: 50c7b45cbd7bf543c81a468fe557a16ae3db8729
   Libuv-gRPC: 55e51798e14ef436ad9bc45d12d43b77b49df378
   nanopb: b552cce312b6c8484180ef47159bc0f65a1f0431
   Promises: fcb83dc6be43294a8d30c343636ed1a45a8d2e0a
   PromisesObjC: 09985d6d70fbe7878040aa746d78236e6946d2ef
 
-PODFILE CHECKSUM: edd68d7a07ba4d3a7d9d50f0562dc1a2a253b16e
+PODFILE CHECKSUM: e63bfc6f099edea455dd5e07f5dfbac36e241726
 
 COCOAPODS: 1.11.2
