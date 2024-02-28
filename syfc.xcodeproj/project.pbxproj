@@ -415,7 +415,7 @@
 				CODE_SIGN_ENTITLEMENTS = syfc/syfc.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 3;
+				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"syfc/Preview Content\"";
 				DEVELOPMENT_TEAM = 4F6LM54QKY;
 				ENABLE_PREVIEWS = YES;
@@ -433,7 +433,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.9.1;
+				MARKETING_VERSION = 1.9.2;
 				PRODUCT_BUNDLE_IDENTIFIER = terra.newsyfc;
 				PRODUCT_NAME = SYFC;
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -453,7 +453,7 @@
 				CODE_SIGN_ENTITLEMENTS = syfc/syfc.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 3;
+				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"syfc/Preview Content\"";
 				DEVELOPMENT_TEAM = 4F6LM54QKY;
 				ENABLE_PREVIEWS = YES;
@@ -471,7 +471,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.9.1;
+				MARKETING_VERSION = 1.9.2;
 				PRODUCT_BUNDLE_IDENTIFIER = terra.newsyfc;
 				PRODUCT_NAME = SYFC;
 				PROVISIONING_PROFILE_SPECIFIER = "";
