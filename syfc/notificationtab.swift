@@ -107,7 +107,7 @@ struct notificationtab: View {
             let task = URLSession.init(configuration: config).dataTask(with: request) { data, _, error in
                 showLoadingIndicator = false
                 guard let data = data, error == nil else {
-                    print("something went wrong")
+                    print("dfs-detail-update or simulator-detail-update went wrong")
                     print(error!)
                     return
                 }
@@ -137,7 +137,7 @@ struct notificationtab: View {
             let task = URLSession.init(configuration: config).dataTask(with: request) { data, _, error in
                 showLoadingIndicator = false
                 guard let data = data, error == nil else {
-                    print("something went wrong")
+                    print("dfs-detail-update or simulator-detail-update went wrong")
                     print(error!)
                     return
                 }
@@ -265,7 +265,7 @@ struct notificationtab: View {
         config.urlCache = nil
         let task = URLSession.init(configuration: config).dataTask(with: request) { data, _, error in
             guard let data = data, error == nil else {
-                print("something went wrong")
+                print("dfs-detail-past went wrong")
                 print(error!)
                 completion(temparray)
                 return
@@ -303,7 +303,7 @@ struct notificationtab: View {
         config.urlCache = nil
         let task = URLSession.init(configuration: config).dataTask(with: request) { data, _, error in
             guard let data = data, error == nil else {
-                print("something went wrong")
+                print("simulator-detail-past went wrong")
                 print(error!)
                 completion(temparray)
                 return
@@ -341,7 +341,7 @@ struct notificationtab: View {
         config.urlCache = nil
         let task = URLSession.init(configuration: config).dataTask(with: request) { data, _, error in
             guard let data = data, error == nil else {
-                print("something went wrong")
+                print("dfs-detail went wrong")
                 print(error!)
                 completion(temparray)
                 return
@@ -379,7 +379,7 @@ struct notificationtab: View {
         config.urlCache = nil
         let task = URLSession.init(configuration: config).dataTask(with: request) { data, _, error in
             guard let data = data, error == nil else {
-                print("something went wrong")
+                print("simulator-detail went wrong")
                 print(error!)
                 completion(temparray)
                 return
@@ -418,7 +418,7 @@ struct notificationtab: View {
         config.urlCache = nil
         let task = URLSession.init(configuration: config).dataTask(with: request) { data, _, error in
             guard let data = data, error == nil else {
-                print("something went wrong")
+                print("dfs-list-detail went wrong")
                 print(error!)
                 completion(temparray)
                 return

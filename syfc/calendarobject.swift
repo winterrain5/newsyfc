@@ -150,10 +150,10 @@ struct CalendarRepresentable: UIViewRepresentable {
             formatter.dateFormat = "yyyy-MM-dd"
             
             for dates in self.parent.mainschedulelist {
-                guard let eventDate = formatter.date(from: dates.lesson_date ?? "") else {return}
+                guard let eventDate = formatter.date(from: dates.lesson_date ) else {return}
                 if date.compare(eventDate) == .orderedSame {
                     self.parent.screenvariable = "eventdate"
-                    self.parent.eventid = dates.student_available_id ?? 0
+                    self.parent.eventid = dates.student_available_id
                 }
             }
             
@@ -172,7 +172,7 @@ struct CalendarRepresentable: UIViewRepresentable {
             var dateStr = ""
             
             for dates in self.parent.mainschedulelist {
-                let eventDate = dateFormatter.date(from: dates.lesson_date ?? "")
+                let eventDate = dateFormatter.date(from: dates.lesson_date)
                 if date.compare(eventDate!) == .orderedSame {
                     let wav01 = dates.wave_one
                     let wav02 = dates.wave_two

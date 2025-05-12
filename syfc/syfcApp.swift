@@ -114,23 +114,23 @@ class schedules: NSObject, NSCoding, Codable {
     
     required convenience init?(coder: NSCoder) {
         self.init()
-        lesson_date = coder.decodeObject(forKey: "lesson_date") as? String
-        student_available_id = coder.decodeObject(forKey: "student_available_id") as? Int
-        student_id = coder.decodeObject(forKey: "student_id") as? Int
-        wave_one = coder.decodeObject(forKey: "wave_one") as? Bool
-        wave_two = coder.decodeObject(forKey: "wave_two") as? Bool
-        wave_three = coder.decodeObject(forKey: "wave_three") as? Bool
-        wave_four = coder.decodeObject(forKey: "wave_four") as? Bool
+        lesson_date = coder.decodeObject(forKey: "lesson_date") as? String ?? ""
+        student_available_id = coder.decodeObject(forKey: "student_available_id") as? Int ?? 0
+        student_id = coder.decodeObject(forKey: "student_id") as? Int ?? 0
+        wave_one = coder.decodeObject(forKey: "wave_one") as? Bool ?? false
+        wave_two = coder.decodeObject(forKey: "wave_two") as? Bool ?? false
+        wave_three = coder.decodeObject(forKey: "wave_three") as? Bool ?? false
+        wave_four = coder.decodeObject(forKey: "wave_four") as? Bool ?? false
         
     }
     
-    var lesson_date: String?
-    var student_available_id: Int?
-    var student_id: Int?
-    var wave_one: Bool?
-    var wave_two: Bool?
-    var wave_three: Bool?
-    var wave_four: Bool?
+    var lesson_date: String = ""
+    var student_available_id: Int = 0
+    var student_id: Int = 0
+    var wave_one: Bool = false
+    var wave_two: Bool = false
+    var wave_three: Bool = false
+    var wave_four: Bool = false
 }
 
 struct notificationcard: Codable {

@@ -756,7 +756,15 @@ PODS:
     - nanopb/encode (= 2.30909.0)
   - nanopb/decode (2.30909.0)
   - nanopb/encode (2.30909.0)
-  - Promises (2.0.4)
+  - PromiseKit (8.2.0):
+    - PromiseKit/CorePromise (= 8.2.0)
+    - PromiseKit/Foundation (= 8.2.0)
+    - PromiseKit/UIKit (= 8.2.0)
+  - PromiseKit/CorePromise (8.2.0)
+  - PromiseKit/Foundation (8.2.0):
+    - PromiseKit/CorePromise
+  - PromiseKit/UIKit (8.2.0):
+    - PromiseKit/CorePromise
   - PromisesObjC (2.2.0)
 
 DEPENDENCIES:
@@ -767,7 +775,7 @@ DEPENDENCIES:
   - FirebaseFirestore
   - FSCalendar
   - HandyJSON (from `https://github.com/alibaba/handyjson`)
-  - Promises
+  - PromiseKit
 
 SPEC REPOS:
   trunk:
@@ -790,7 +798,7 @@ SPEC REPOS:
     - leveldb-library
     - Libuv-gRPC
     - nanopb
-    - Promises
+    - PromiseKit
     - PromisesObjC
 
 EXTERNAL SOURCES:
@@ -823,9 +831,9 @@ SPEC CHECKSUMS:
   leveldb-library: 50c7b45cbd7bf543c81a468fe557a16ae3db8729
   Libuv-gRPC: 55e51798e14ef436ad9bc45d12d43b77b49df378
   nanopb: b552cce312b6c8484180ef47159bc0f65a1f0431
-  Promises: fcb83dc6be43294a8d30c343636ed1a45a8d2e0a
+  PromiseKit: 74e6ab5894856b4762fef547055c809bca91d440
   PromisesObjC: 09985d6d70fbe7878040aa746d78236e6946d2ef
 
-PODFILE CHECKSUM: e63bfc6f099edea455dd5e07f5dfbac36e241726
+PODFILE CHECKSUM: c3377befe97f4d216b42712dba1e87cc1eea9ddd
 
-COCOAPODS: 1.11.2
+COCOAPODS: 1.15.2

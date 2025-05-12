@@ -163,7 +163,7 @@ struct dfsnavigationbar: View {
         
         let task = URLSession.init(configuration: config).dataTask(with: request) { data, _, error in
             guard let _ = data, error == nil else {
-                print("something went wrong")
+                print("mobile-approve went wrong")
                 print(error!)
                 approvedFailed = true
                 return
